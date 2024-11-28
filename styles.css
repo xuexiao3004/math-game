@@ -1,0 +1,238 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+}
+
+.tab-button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.game-section {
+    display: none;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.game-section.active {
+    display: block;
+}
+
+.tree-container {
+    margin: 20px auto;
+    padding: 20px;
+    width: fit-content;
+}
+
+.tree-level {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.level-0 {
+    margin-bottom: 60px;
+}
+
+.level-1 {
+    margin-top: 20px;
+}
+
+.tree-node {
+    display: flex;
+    align-items: center;
+    margin: 0 40px;
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.node-content {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 问号节点样式 */
+.node-content.question {
+    border: 2px solid #666;
+    background-color: #fff;
+}
+
+/* 连接线样式 */
+.level-0 .tree-node::before,
+.level-0 .tree-node::after {
+    content: '';
+    position: absolute;
+    background-color: #ff0000;
+    height: 2px;
+    bottom: -30px;
+    width: 40px;
+}
+
+.level-0 .tree-node::before {
+    transform: rotate(30deg);
+    left: 45px;
+}
+
+.level-0 .tree-node::after {
+    transform: rotate(-30deg);
+    right: 45px;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.option {
+    padding: 10px 20px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 80px;
+    text-align: center;
+}
+
+.option:hover {
+    background-color: #d0d0d0;
+}
+
+.option.selected {
+    background-color: #b0b0b0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result-message {
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.error {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+#problem {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 30px 0;
+}
+
+/* 响应式布局调整 */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    .tabs {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .tab-button {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .game-section {
+        padding: 10px;
+    }
+
+    .tree-node {
+        margin: 0 20px;
+        font-size: 20px;
+    }
+
+    .node-content {
+        width: 50px;
+        height: 50px;
+    }
+
+    #problem {
+        font-size: 24px;
+        margin: 20px 0;
+    }
+
+    .option {
+        padding: 15px;
+        min-width: 60px;
+        font-size: 18px;
+    }
+
+    #new-game {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* 防止在移动设备上缩放导致布局问题 */
+@media screen and (max-width: 480px) {
+    .level-0 {
+        margin-bottom: 40px;
+    }
+
+    .level-0 .tree-node::before,
+    .level-0 .tree-node::after {
+        width: 30px;
+        bottom: -20px;
+    }
+
+    .level-0 .tree-node::before {
+        left: 35px;
+    }
+
+    .level-0 .tree-node::after {
+        right: 35px;
+    }
+} 

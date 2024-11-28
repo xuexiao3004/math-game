@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>趣味数学游戏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>趣味数学游戏</h1>
+        
+        <div class="tabs">
+            <button class="tab-button active" data-tab="game1">数的分解与合成</button>
+            <button class="tab-button" data-tab="game2">趣味运算</button>
+        </div>
+
+        <div id="game1" class="game-section active">
+            <div id="decomposition-game">
+                <div id="number-tree"></div>
+                <div id="decomposition-options" class="options"></div>
+            </div>
+        </div>
+
+        <div id="game2" class="game-section">
+            <div id="calculation-game">
+                <div id="problem"></div>
+                <div id="calculation-options" class="options"></div>
+            </div>
+        </div>
+
+        <div id="result-message"></div>
+        <button id="new-game">新游戏</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
